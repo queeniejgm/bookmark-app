@@ -1,27 +1,26 @@
-# BookmarkApp
+# bookmark-app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+FrontEnd Developer application submitted by Queenie Barcoma 03/03/2021
 
-## Development server
+Bookmark Management App built in Angular using NgRx for the state management and Angular Material for the UI that allows user to create, view, update, and delete bookmark. Bookmark contains name, url, and group.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Bookmark List
+![image](https://user-images.githubusercontent.com/7346328/109701562-1f16cf00-7bce-11eb-9fbe-7cc388072c13.png)
 
-## Code scaffolding
+Create Bookmark Page
+![image](https://user-images.githubusercontent.com/7346328/109701647-348bf900-7bce-11eb-939c-32ed25e2bfdf.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+View/Update Bookmark Page
+![image](https://user-images.githubusercontent.com/7346328/109701767-5b4a2f80-7bce-11eb-9245-ee629d2566a5.png)
 
-## Build
+Download Repo at Github.com
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+How to setup & run:
 
-## Running unit tests
+from the directory:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    - npm install
+    -
+    - ng serve
+    -
+    from the browser, localhost:4200
