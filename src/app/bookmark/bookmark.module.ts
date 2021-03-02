@@ -6,9 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { bookmarkReducer } from './store/bookmark.reducers';
+import { BookmarkListComponent } from './component/bookmark-list/bookmark-list.component';
+import { CreateBookmarkComponent } from './component/create-bookmark/create-bookmark.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [BookmarkListComponent, CreateBookmarkComponent],
   imports: [
     CommonModule,
     FormsModule,
