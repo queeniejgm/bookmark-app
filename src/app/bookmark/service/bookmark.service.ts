@@ -11,7 +11,7 @@ export class BookmarkService {
     this.http = http;
   }
 
-  apiUrl = 'https://www.crudcrud.com/api/5c59dad9fd1c43848635efc7cc25fd6f/';
+  apiUrl = 'https://www.crudcrud.com/api/1ed50c7b84ab4319918fee0bfc376c8c/';
 
   getAllBookmarks(): Observable<Bookmark[]> {
     return this.http.get<Bookmark[]>(this.apiUrl + 'Bookmarks');

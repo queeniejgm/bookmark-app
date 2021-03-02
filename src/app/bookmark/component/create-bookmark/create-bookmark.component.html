@@ -1,29 +1,52 @@
-<div class="example-container" color="primary">
-  <form [formGroup]="bookmarkForm" (ngSubmit)="createBookmark()">
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput formControlName="name" />
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>URL</mat-label>
-        <input matInput formControlName="url" />
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Select</mat-label>
-        <mat-select formControlName="group">
-          <mat-option [value]="groupItem.id" *ngFor="let groupItem of group">
-            {{ groupItem.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </p>
-    <p>
-      <button mat-button color="primary" class="btn btn-primary">Basic</button>
-    </p>
-  </form>
+<div fxLayout="column" fxFlex="70" class="page-create-bookmark">
+  <div fxFlex class="page-header mat-headline">Create New Bookmark</div>
+  <div fxFlex class="page-content">
+    <form
+      [formGroup]="bookmarkForm"
+      (ngSubmit)="createBookmark()"
+      fxLayout="column"
+    >
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="f.name.errors && f.name.errors.required">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>URL</mat-label>
+          <input matInput formControlName="url" />
+          <mat-error *ngIf="f.url.errors && f.url.errors.required">
+            URL is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Select</mat-label>
+          <mat-select formControlName="group">
+            <mat-option [value]="groupItem.id" *ngFor="let groupItem of group">
+              {{ groupItem.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="f.group.errors && f.group.errors.required">
+            Group is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <button
+          fxFlex="100"
+          mat-raised-button
+          color="primary"
+          class="btn btn-primary"
+        >
+          Create Bookmark
+        </button>
+      </p>
+    </form>
+  </div>
 </div>

@@ -1,0 +1,14 @@
+@import "./../../../../variables";
+
+.page-bookmark-list {
+  margin: auto;
+
+  .bookmark-group {
+    .bookmark-item {
+      padding: 1em;
+      &:nth-child(odd) {
+        background-color: $color-odd;
+      }
+    }
+  }
+}

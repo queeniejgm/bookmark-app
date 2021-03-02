@@ -17,8 +17,8 @@ export class CreateBookmarkComponent implements OnInit {
   bookmarkForm: FormGroup;
   group: Group[] = [
     { id: 1, name: 'Work' },
-    { id: 1, name: 'Leisure' },
-    { id: 1, name: 'Personal' },
+    { id: 2, name: 'Leisure' },
+    { id: 3, name: 'Personal' },
   ];
 
   constructor(
@@ -35,8 +35,6 @@ export class CreateBookmarkComponent implements OnInit {
   }
 
   createBookmark() {
-    console.log(this.bookmarkForm.value);
-
     if (this.bookmarkForm.invalid) {
       return;
     }
@@ -48,5 +46,9 @@ export class CreateBookmarkComponent implements OnInit {
       group: this.bookmarkForm.value.group,
     };
     this.store.dispatch(createBookmark({ bookmark }));
+  }
+
+  get f() {
+    return this.bookmarkForm.controls;
   }
 }

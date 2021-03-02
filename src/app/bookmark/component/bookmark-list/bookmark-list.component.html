@@ -1,11 +1,44 @@
-<div fxLayout="column" class="page-bookmark-list">
-  <div fxFlex class="page-header">3</div>
+<div fxLayout="column" fxFlex="70" fxFlex.xs="100" class="page-bookmark-list">
+  <div fxFlex class="page-header mat-headline">Bookmarks</div>
   <div fxFlex class="page-content">
-    <div *ngFor="let bookmark of bookmarks$ | async">
-      <div>{{ bookmark.name }}</div>
-      <div>{{ bookmark.url }}</div>
-      <div>{{ bookmark.type }}</div>
-    </div>
+    <mat-accordion>
+      <mat-expansion-panel
+        *ngFor="let bookmarkGroup of groupedBookmarks"
+        class="bookmark-group"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h1>{{ bookmarkGroup.name }}</h1></mat-panel-title
+          >
+        </mat-expansion-panel-header>
+        <div
+          *ngFor="let bookmark of bookmarkGroup.values"
+          class="bookmark-item"
+          fxLayoutALign="space-between center"
+        >
+          <div fxFlex>
+            <p class="mat-subheading-1">{{ bookmark.name }}</p>
+            <p>{{ bookmark.url }}</p>
+          </div>
+          <div fxFlex="10">
+            <mat-icon aria-hidden="false" aria-label="Edit bookmark"
+              >edit</mat-icon
+            >
+            <mat-icon aria-hidden="false" aria-label="Delete bookmark"
+              >delete</mat-icon
+            >
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
-  <div fxFlex class="page-footer">3</div>
+  <div fxFlex="100" fxLayout="row" class="page-footer">
+    <a
+      fxFlex="100"
+      mat-raised-button
+      color="primary"
+      routerLink="/create-bookmark"
+      >Submit</a
+    >
+  </div>
 </div>
