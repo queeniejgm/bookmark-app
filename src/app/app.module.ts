@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { BookmarkModule } from './bookmark/bookmark.module';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookmarkResolver } from './bookmark/bookmark.resolver';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [BookmarkResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

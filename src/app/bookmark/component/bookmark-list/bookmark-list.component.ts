@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { getAllBookmarks } from './../../store/bookmark.selectors';
-import { bookmarkActionTypes } from './../../store/bookmark.actions';
+import {
+  bookmarkActionTypes,
+  loadBookmarks,
+} from './../../store/bookmark.actions';
 import { AppState } from './../../../store/reducers/index';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -27,6 +30,7 @@ export class BookmarkListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // this.store.dispatch(loadBookmarks());
     this.bookmarks$ = this.store.select(getAllBookmarks);
   }
 }
