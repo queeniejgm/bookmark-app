@@ -13,11 +13,11 @@ export const initialState = adapter.getInitialState({
   bookmarksLoaded: false,
 });
 
-export const bookmarkReducer = createReducer(
+export const _bookmarkReducer = createReducer(
   initialState,
 
   on(bookmarkActionTypes.bookmarksLoaded, (state, action) => {
-    return adapter.addAll(action.bookmarks, {
+    return adapter.setAll(action.bookmarks, {
       ...state,
       bookmarksLoaded: true,
     });
@@ -35,5 +35,9 @@ export const bookmarkReducer = createReducer(
     return adapter.updateOne(action.update, state);
   })
 );
+
+export function bookmarkReducer(state, action) {
+  return _bookmarkReducer(state, action);
+}
 
 export const { selectAll, selectIds } = adapter.getSelectors();
