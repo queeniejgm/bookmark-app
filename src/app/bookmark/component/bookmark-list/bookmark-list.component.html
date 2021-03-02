@@ -1,1 +1,11 @@
-<p>bookmark-list works!</p>
+<div fxLayout="column" class="page-bookmark-list">
+  <div fxFlex class="page-header">3</div>
+  <div fxFlex class="page-content">
+    <div *ngFor="let bookmark of bookmarks$ | async">
+      <div>{{ bookmark.name }}</div>
+      <div>{{ bookmark.url }}</div>
+      <div>{{ bookmark.type }}</div>
+    </div>
+  </div>
+  <div fxFlex class="page-footer">3</div>
+</div>

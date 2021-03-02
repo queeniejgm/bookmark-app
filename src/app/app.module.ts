@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BookmarkModule } from './bookmark/bookmark.module';
 import { EffectsModule } from '@ngrx/effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,8 @@ import { EffectsModule } from '@ngrx/effects';
     StoreModule.forRoot(reducers, { metaReducers }),
 
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

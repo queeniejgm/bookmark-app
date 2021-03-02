@@ -1,1 +1,29 @@
-<p>create-bookmark works!</p>
+<div class="example-container" color="primary">
+  <form [formGroup]="bookmarkForm" (ngSubmit)="createBookmark()">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>URL</mat-label>
+        <input matInput formControlName="url" />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Select</mat-label>
+        <mat-select formControlName="group">
+          <mat-option [value]="groupItem.id" *ngFor="let groupItem of group">
+            {{ groupItem.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <p>
+      <button mat-button color="primary" class="btn btn-primary">Basic</button>
+    </p>
+  </form>
+</div>

@@ -1,0 +1,120 @@
+// font-weight
+$thin: 100;
+$light: 300;
+$regular: 400;
+$bold: 700;
+$black: 900;
+// Font size
+$font-xs: 12px;
+$font-sm: 14px;
+$primary-fs: 16px;
+$font-md: 18px;
+$font-lg: 20px;
+
+//----------------------------------*\
+// Colors
+//----------------------------------*/
+$mat-palette-primary: (
+  50: #eae2ee,
+  100: #ccb6d4,
+  200: #aa86b7,
+  300: #87569a,
+  400: #6e3184,
+  500: #540d6e,
+  600: #4d0b66,
+  700: #43095b,
+  800: #3a0751,
+  900: #29033f,
+  A100: #c474ff,
+  A200: #ae41ff,
+  A400: #990eff,
+  A700: #8c00f4,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$mat-palette-secondary: (
+  50: #e0efef,
+  100: #b3d8d6,
+  200: #80bebb,
+  300: #4da3a0,
+  400: #26908b,
+  500: #007c77,
+  600: #00746f,
+  700: #006964,
+  800: #005f5a,
+  900: #004c47,
+  A100: #80fff4,
+  A200: #4dfff0,
+  A400: #1affec,
+  A700: #00ffea,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$mat-palette-warmblack: (
+  50: #e7e7e6,
+  100: #c2c2c1,
+  200: #9a9a98,
+  300: #72726f,
+  400: #535350,
+  500: #353531,
+  600: #30302c,
+  700: #282825,
+  800: #22221f,
+  900: #161613,
+  A100: #f6f667,
+  A200: #f3f337,
+  A400: #f6f600,
+  A700: #dddd00,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$color-white: #ffffff;
+$color-purple: #540d6e;
+$color-green: #007c77;
+$color-black: #353531;
+$color-coral: #ff6b6b;
