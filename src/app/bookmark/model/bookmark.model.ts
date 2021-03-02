@@ -5,4 +5,5 @@ export interface Bookmark {
   name: string;
   url: string;
   group: Group;
+  _id?: string;
 }

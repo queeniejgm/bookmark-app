@@ -16,3 +16,8 @@ export const areBookmarksLoaded = createSelector(
   bookmarkFeatureSelector,
   (state) => state.bookmarksLoaded
 );
+
+export const getSelectedBookmark = createSelector(
+  bookmarkFeatureSelector,
+  (state) => state.selectedBookmark
+);

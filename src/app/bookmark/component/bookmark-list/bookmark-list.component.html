@@ -21,10 +21,16 @@
             <p>{{ bookmark.url }}</p>
           </div>
           <div fxFlex="10">
-            <mat-icon aria-hidden="false" aria-label="Edit bookmark"
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Edit bookmark"
+              (click)="viewBookmark(bookmark)"
               >edit</mat-icon
             >
-            <mat-icon aria-hidden="false" aria-label="Delete bookmark"
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Delete bookmark"
+              (click)="deleteBookmark(bookmark.id)"
               >delete</mat-icon
             >
           </div>
@@ -38,7 +44,7 @@
       mat-raised-button
       color="primary"
       routerLink="/create-bookmark"
-      >Submit</a
+      >Create Bookmark</a
     >
   </div>
 </div>

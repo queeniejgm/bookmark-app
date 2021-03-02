@@ -1,6 +1,7 @@
 import {
   bookmarkActionTypes,
   bookmarksLoaded,
+  viewBookmark,
   updateBookmark,
 } from './bookmark.actions';
 import { BookmarkService } from './../service/bookmark.service';
@@ -51,7 +52,10 @@ export class BookmarkEffects {
             action.update.id,
             action.update.changes
           )
-        )
+        ),
+        tap(() => {
+          this.router.navigateByUrl('/bookmarks');
+        })
       ),
     { dispatch: false }
   );

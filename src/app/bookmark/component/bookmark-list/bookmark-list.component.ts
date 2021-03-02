@@ -1,17 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { getAllBookmarks } from './../../store/bookmark.selectors';
-// import {
-//   bookmarkActionTypes,
-//   loadBookmarks,
-// } from './../../store/bookmark.actions';
 import { AppState } from './../../../store/reducers/index';
 import { Observable } from 'rxjs';
 import { Bookmark } from './../../model/bookmark.model';
 import { BookmarkService } from './../../service/bookmark.service';
-import { Store, select } from '@ngrx/store';
-import { tap } from 'rxjs/operators';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { threadId } from 'worker_threads';
+import { Store } from '@ngrx/store';
+import { bookmarkActionTypes } from '../../store/bookmark.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bookmark-list',
@@ -26,10 +21,7 @@ export class BookmarkListComponent implements OnInit {
   isUpdateActivated = false;
   groupedBookmarks = [];
 
-  constructor(
-    private bookmarkService: BookmarkService,
-    private store: Store<AppState>
-  ) {}
+  constructor(private router: Router, private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.bookmarks$ = this.store.select(getAllBookmarks);
@@ -43,8 +35,17 @@ export class BookmarkListComponent implements OnInit {
           values: data.filter((i) => i.group === g),
         })
       );
-
-      console.log('!!! groupedBookmarks', this.groupedBookmarks);
     });
+  }
+
+  deleteBookmark(bookmarkId: string) {
+    this.store.dispatch(bookmarkActionTypes.deleteBookmark({ bookmarkId }));
+  }
+
+  viewBookmark(selectedBookmark: Bookmark) {
+    this.store.dispatch(
+      bookmarkActionTypes.viewBookmark({ bookmark: selectedBookmark })
+    );
+    this.router.navigate(['/create-bookmark']);
   }
 }

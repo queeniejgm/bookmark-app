@@ -1,16 +1,22 @@
 import { Bookmark } from './../model/bookmark.model';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
-import { bookmarkActionTypes, bookmarksLoaded } from './bookmark.actions';
+import {
+  bookmarkActionTypes,
+  bookmarksLoaded,
+  viewBookmark,
+} from './bookmark.actions';
 
 export interface BookmarkState extends EntityState<Bookmark> {
   bookmarksLoaded: boolean;
+  selectedBookmark: Bookmark | null;
 }
 
 export const adapter: EntityAdapter<Bookmark> = createEntityAdapter<Bookmark>();
 
 export const initialState = adapter.getInitialState({
   bookmarksLoaded: false,
+  selectedBookmark: null,
 });
 
 export const _bookmarkReducer = createReducer(
@@ -21,6 +27,10 @@ export const _bookmarkReducer = createReducer(
       ...state,
       bookmarksLoaded: true,
     });
+  }),
+
+  on(bookmarkActionTypes.viewBookmark, (state, { bookmark }) => {
+    return { ...state, selectedBookmark: bookmark };
   }),
 
   on(bookmarkActionTypes.createBookmark, (state, action) => {

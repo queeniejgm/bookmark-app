@@ -26,10 +26,16 @@ export const updateBookmark = createAction(
   props<{ update: Update<Bookmark> }>()
 );
 
+export const viewBookmark = createAction(
+  '[Bookmarks List Operations] View Bookmark',
+  props<{ bookmark: Bookmark }>()
+);
+
 export const bookmarkActionTypes = {
   loadBookmarks,
   bookmarksLoaded,
   createBookmark,
   deleteBookmark,
   updateBookmark,
+  viewBookmark,
 };

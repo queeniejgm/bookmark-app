@@ -1,11 +1,9 @@
 <div fxLayout="column" fxFlex="70" class="page-create-bookmark">
-  <div fxFlex class="page-header mat-headline">Create New Bookmark</div>
+  <div fxFlex class="page-header mat-headline">
+    {{ isEdit ? "Edit" : "Create New" }} Bookmark
+  </div>
   <div fxFlex class="page-content">
-    <form
-      [formGroup]="bookmarkForm"
-      (ngSubmit)="createBookmark()"
-      fxLayout="column"
-    >
+    <form [formGroup]="bookmarkForm" (ngSubmit)="onSubmit()" fxLayout="column">
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
@@ -38,13 +36,23 @@
         </mat-form-field>
       </p>
       <p>
+        <a
+          fxFlex="50"
+          mat-button
+          color="primary"
+          class="btn btn-accent"
+          type="cancel"
+          routerLink="/"
+        >
+          Cancel
+        </a>
         <button
-          fxFlex="100"
+          fxFlex="50"
           mat-raised-button
           color="primary"
           class="btn btn-primary"
         >
-          Create Bookmark
+          Submit
         </button>
       </p>
     </form>
