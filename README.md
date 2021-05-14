@@ -1,6 +1,6 @@
 # bookmark-app
 
-FrontEnd Developer application submitted by Queenie Barcoma 03/03/2021
+FrontEnd Developer application by Queenie Barcoma
 
 Bookmark Management App built in Angular using NgRx for the state management and Angular Material for the UI that allows user to create, view, update, and delete bookmark. Bookmark contains name, url, and group.
 
